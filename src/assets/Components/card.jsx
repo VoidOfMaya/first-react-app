@@ -2,23 +2,7 @@ import photo from'../../../public/battleship480x360.png';
 import './card.css';
 
 function CreateCard(){
-    const card = document.createElement('div');
-    const screenshot = document.createElement('img');
-    const title = document.createElement('h2')
-    const about = document.createElement('p');
 
-
-
-
-
-
-
-
-    about.innerHTML="random info goes here, lurom ipsum darium fucjing idk man";
-    about.style.justifySelf="center";
-    about.style.alignSelf="start";
-    about.style.margin= '5px';
-    about.style.fontSize = "20px"; 
 
     return(
         <div class="card">
@@ -31,6 +15,20 @@ function CreateCard(){
         </div>
     )
 }
+function Test(){
+    return(
+        <>
+            <h1>Test title</h1>
+            <svg>
+                <circle cx="25" cy="75" r="20" stroke="green" strokeWidth="2" />
+            </svg>
+            <form>
+            <input type="text" />
+            </form>
+        </>
+    );
+}
  export{
-    CreateCard
+    CreateCard,
+    Test
  }

@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { SayHi } from './assets/Components/Greeting.jsx'
-import { CreateCard } from './assets/Components/card.jsx'
+import { CreateCard, Test } from './assets/Components/card.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CreateCard />
+    <Test />
     <CreateCard />
     <SayHi />
     <App />
