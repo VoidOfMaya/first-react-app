@@ -1,0 +1,26 @@
+.card{
+    position: relative;
+    display: grid;
+    width: 320px;
+    height: 450px;
+    background-color:#eedbdd ;
+    border-radius: 10px ;
+    box-shadow: 1px 10px 51px -36px  rgba(34, 24, 28);
+}
+
+.photo{
+    border-radius: 10px 10px 0px 0px;
+}
+.header{
+
+    justify-self: center;
+    position : absolute;
+    transform:translateY(180px);
+}
+.artical{
+
+justify-self:center;
+align-self:start;
+margin:5px;
+font-size :20px; 
+}
