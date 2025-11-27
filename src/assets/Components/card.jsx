@@ -5,16 +5,23 @@ function CreateCard(){
 
 
     return(
-        <div class="card">
-            <img class="photo" src='../../../public/battleship480x360.png' 
+        <div className="card" style={{display: 'flex', flexDirection:'column'}}>
+            <img className="photo" src='../../../public/battleship480x360.png' 
             alt='photo of game' 
             width="320px" 
-            height="200px"></img>
-            <h3 class="header">example card</h3>
-            <p class="artical">random info goes here, lurom ipsum darium fucjing idk man</p>
+            height="200px" />
+            <h3 className="header">example card</h3>
+            <p className="artical">random info goes here, lurom ipsum darium fucjing idk man</p>
         </div>
     )
 }
+/*
+JSX rules:
+1- element must be incapsulated in a container either <></> fragment or any markup container-return onle one root element
+2- all elements must be closed off  <input> must be <input />
+3- attributes with - separator shoud be declared in camelCase instead, storke-width should be strokeWidth
+4- some attributes that are used in js might clash with the markup...instead of class="" use className=""
+ */
 function Test(){
     return(
         <>
