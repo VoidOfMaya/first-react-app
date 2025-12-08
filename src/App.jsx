@@ -1,6 +1,7 @@
 
 import { SayHi} from './assets/Components/Greeting'
 import './App.css'
+import { useState } from 'react'
 //rendering conditionals can be use with terenary operators example: {!props.animals ? (<div>Loading...</div>)
 //also with the && operator as a cascading conditional      example: {!props.animals && <div>Loading...</div>}
 function List(props){
@@ -19,13 +20,21 @@ function List(props){
     )
 }
 function App() {
-  const animals = ['cat', 'chicken', 'dog' ,'bird'];
+  //const animals = ['cat', 'chicken', 'dog' ,'bird'];
+    const [heading, setHeading] = useState("Magnificent Monkeys");
+
+  const clickHandler = () => {
+    setHeading("Radical Rhinos");
+  };
+
   return (
     <>
-    <h1>our first test</h1>
+      <button type="button" onClick={clickHandler}>
+        Click Me
+      </button>
+      <h1>{heading}</h1>
     </>
-  )
-}
+  );
+};
 
-
-export default App
+export default App;
