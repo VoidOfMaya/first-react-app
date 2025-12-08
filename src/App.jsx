@@ -22,8 +22,7 @@ function App() {
   const animals = ['cat', 'chicken', 'dog' ,'bird'];
   return (
     <>
-      <h1>Animals:</h1>
-      <List animals={animals} />
+    <h1>our first test</h1>
     </>
   )
 }

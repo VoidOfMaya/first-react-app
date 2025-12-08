@@ -7,10 +7,6 @@ import { CreateCard, Test } from './assets/Components/card.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <CreateCard />
-    <Test />
-    <CreateCard />
-    <SayHi />
     <App />
   </StrictMode>,
 )
