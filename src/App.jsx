@@ -1,5 +1,8 @@
 
 import { SayHi} from './assets/Components/Greeting'
+import { CreateCard } from './assets/Components/card'
+import React from 'react'
+import { User } from './assets/Components/user'
 import './App.css'
 import { useState } from 'react'
 //rendering conditionals can be use with terenary operators example: {!props.animals ? (<div>Loading...</div>)
@@ -20,21 +23,21 @@ function List(props){
     )
 }
 function App() {
-  //const animals = ['cat', 'chicken', 'dog' ,'bird'];
-    const [heading, setHeading] = useState("Magnificent Monkeys");
+  const [user, setUser] = React.useState(null);
+  const [error, setError] = React.useState('');
 
-  const clickHandler = () => {
-    setHeading("Radical Rhinos");
-  };
+  React.useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users/1')
+      .then((response) => response.json())
+      .then((user) => setUser(user))
+      .catch((error) => setError(error.message));
+  }, []);
 
-  return (
-    <>
-      <button type="button" onClick={clickHandler}>
-        Click Me
-      </button>
-      <h1>{heading}</h1>
-    </>
-  );
+  if (error) {
+    return <span>{error}</span>;
+  }
+
+  return <div>{user ? <User user={user} /> : <span>Loading...</span>}</div>;
 };
 
 export default App;
