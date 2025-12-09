@@ -86,4 +86,13 @@ describe('input value is updated correctly', () => {
     await UserEvent.type(input, 'React');
     expect(handleChange).toHaveBeenCalledTimes(5);
   })
+  // this is how to abstrackt and mock a child component with the minimal requirments for the parent to function
+  it('abstracts component',()=>{
+    jest.mock('../assets/Components/card',()=>({photo, text})=>{
+      <>
+      <div data-test-id="photo">{photo.id}</div>
+      <div data-test-id="text">{text}</div>
+      </>
+    })
+  })
 });
