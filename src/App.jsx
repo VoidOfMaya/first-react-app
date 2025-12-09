@@ -1,7 +1,7 @@
 
 import { SayHi} from './assets/Components/Greeting'
 import { CreateCard } from './assets/Components/card'
-import React from 'react'
+import { Input } from './assets/Components/input'
 import { User } from './assets/Components/user'
 import './App.css'
 import { useState } from 'react'
@@ -23,21 +23,17 @@ function List(props){
     )
 }
 function App() {
-  const [user, setUser] = React.useState(null);
-  const [error, setError] = React.useState('');
+  const [inputValue, setInputValue] =useState('');
 
-  React.useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users/1')
-      .then((response) => response.json())
-      .then((user) => setUser(user))
-      .catch((error) => setError(error.message));
-  }, []);
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
 
-  if (error) {
-    return <span>{error}</span>;
-  }
-
-  return <div>{user ? <User user={user} /> : <span>Loading...</span>}</div>;
-};
+  return (
+    <div>
+      <Input handleChange={handleChange} inputValue={inputValue} />
+    </div>
+  );
+}
 
 export default App;
